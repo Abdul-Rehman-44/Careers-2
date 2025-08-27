@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Twitter, Mail, Award, Users } from 'lucide-react';
+import { Github, Linkedin, Mail, Award, Users, MapPin, Calendar, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import SEO, { seoConfigs } from '../components/SEO';
@@ -37,102 +37,78 @@ const Teams: React.FC = () => {
       id: 1,
       name: 'Ahmad Yasin',
       role: 'CEO & Founder',
-      bio: 'Visionary AI expert and entrepreneur with deep expertise in neural networks, machine learning, and enterprise AI solutions. Leading Nexariza AI to transform businesses worldwide.',
-      image: 'https://images.pexels.com/photos/3760811/pexels-photo-3760811.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
-      expertise: ['AI Strategy', 'Neural Networks', 'Business Leadership', 'Innovation'],
+      bio: 'Visionary AI expert and entrepreneur with deep expertise in neural networks, machine learning, and enterprise AI solutions. Leading Nexariza AI to transform businesses worldwide with innovative AI technologies.',
+      image: 'https://images.pexels.com/photos/3760811/pexels-photo-3760811.jpeg?auto=compress&cs=tinysrgb&w=500&h=500&fit=crop',
+      expertise: ['AI Strategy', 'Neural Networks', 'Business Leadership', 'Innovation Management'],
       social: {
-        linkedin: '#',
-        twitter: '#',
-        github: '#',
+        linkedin: 'https://linkedin.com/in/ahmad-yasin-ai',
+        github: 'https://github.com/ahmad-yasin-ai',
         email: 'ahmad@nexariza.com'
       },
       achievements: ['AI Industry Pioneer', 'Tech Innovation Leader', 'Business Transformation Expert'],
-      isLeader: true
+      location: 'San Francisco, CA',
+      joinDate: 'Founder - 2024',
+      isFounder: true
     },
     {
       id: 2,
       name: 'Dr. Sarah Chen',
-      role: 'Chief Technology Officer',
-      bio: 'Former Google AI researcher with 15+ years in machine learning. PhD from Stanford, published 50+ papers in top-tier journals.',
-      image: 'https://images.pexels.com/photos/3777946/pexels-photo-3777946.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
-      expertise: ['Machine Learning', 'Deep Learning', 'Research', 'Technical Leadership'],
+      role: 'Senior AI Engineer',
+      bio: 'Former Google AI researcher with 12+ years in machine learning and deep learning. PhD from Stanford University with expertise in neural network architectures and large-scale AI systems.',
+      image: 'https://images.pexels.com/photos/3777946/pexels-photo-3777946.jpeg?auto=compress&cs=tinysrgb&w=500&h=500&fit=crop',
+      expertise: ['Machine Learning', 'Deep Learning', 'Neural Architecture', 'Research & Development'],
       social: {
-        linkedin: '#',
-        twitter: '#',
-        github: '#',
+        linkedin: 'https://linkedin.com/in/sarah-chen-ai',
+        github: 'https://github.com/sarah-chen-ai',
         email: 'sarah@nexariza.com'
       },
       achievements: ['Forbes 30 Under 30', 'AI Researcher of the Year', 'TEDx Speaker'],
-      isLeader: true
+      location: 'New York, NY',
+      joinDate: 'March 2024',
+      isFounder: false
     },
     {
       id: 3,
       name: 'Michael Rodriguez',
-      role: 'Head of AI Engineering',
-      bio: 'Former Tesla Autopilot engineer specializing in computer vision and autonomous systems. MS from MIT with focus on neural architectures.',
-      image: 'https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
-      expertise: ['Computer Vision', 'Autonomous Systems', 'Neural Architecture', 'Engineering Leadership'],
+      role: 'Lead AI Developer',
+      bio: 'Full-stack AI developer specializing in computer vision and autonomous systems. Former Tesla engineer with expertise in real-time AI processing and edge computing solutions.',
+      image: 'https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=500&h=500&fit=crop',
+      expertise: ['Computer Vision', 'Full-Stack Development', 'Edge Computing', 'Real-time Systems'],
       social: {
-        linkedin: '#',
-        twitter: '#',
-        github: '#',
+        linkedin: 'https://linkedin.com/in/michael-rodriguez-ai',
+        github: 'https://github.com/michael-rodriguez-ai',
         email: 'michael@nexariza.com'
       },
-      achievements: ['Tech Innovation Award', 'Patent Holder (12)', 'Open Source Contributor'],
-      isLeader: false
+      achievements: ['Tech Innovation Award', 'Patent Holder (8)', 'Open Source Contributor'],
+      location: 'Austin, TX',
+      joinDate: 'May 2024',
+      isFounder: false
     },
     {
       id: 4,
       name: 'Dr. Emily Watson',
-      role: 'Lead AI Researcher',
-      bio: 'Leading AI researcher with expertise in natural language processing and conversational AI. PhD from Carnegie Mellon.',
-      image: 'https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
-      expertise: ['Natural Language Processing', 'Conversational AI', 'Research', 'Publications'],
+      role: 'AI Consultant',
+      bio: 'Strategic AI consultant with expertise in enterprise AI implementation and business transformation. PhD from MIT with focus on AI ethics and responsible AI development.',
+      image: 'https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=500&h=500&fit=crop',
+      expertise: ['AI Strategy', 'Enterprise Consulting', 'AI Ethics', 'Business Transformation'],
       social: {
-        linkedin: '#',
-        twitter: '#',
-        github: '#',
+        linkedin: 'https://linkedin.com/in/emily-watson-ai',
+        github: 'https://github.com/emily-watson-ai',
         email: 'emily@nexariza.com'
       },
-      achievements: ['AAAI Fellow', '40+ Research Papers', 'Industry Speaker'],
-      isLeader: false
-    },
-    {
-      id: 5,
-      name: 'David Kim',
-      role: 'VP of Engineering',
-      bio: 'Full-stack AI engineer with experience scaling AI systems at Facebook and Microsoft. Expert in MLOps and cloud architecture.',
-      image: 'https://images.pexels.com/photos/3760736/pexels-photo-3760736.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
-      expertise: ['MLOps', 'Cloud Architecture', 'Distributed Systems', 'Team Leadership'],
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        github: '#',
-        email: 'david@nexariza.com'
-      },
-      achievements: ['Microsoft MVP', 'Cloud Expert', 'Tech Mentor'],
-      isLeader: false
-    },
-    {
-      id: 6,
-      name: 'Dr. Priya Patel',
-      role: 'Lead Data Scientist',
-      bio: 'Healthcare AI specialist with focus on medical imaging and diagnostic systems. MD and PhD in Biomedical Engineering.',
-      image: 'https://images.pexels.com/photos/3778876/pexels-photo-3778876.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
-      expertise: ['Medical AI', 'Computer Vision', 'Healthcare Systems', 'Regulatory Compliance'],
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        github: '#',
-        email: 'priya@nexariza.com'
-      },
-      achievements: ['Healthcare AI Pioneer', 'FDA Approval Expert', 'Medical Journal Publications'],
-      isLeader: false
+      achievements: ['AI Ethics Leader', 'Enterprise Consultant', 'Industry Speaker'],
+      location: 'Seattle, WA',
+      joinDate: 'July 2024',
+      isFounder: false
     }
   ];
 
-  const leaders = teamMembers.filter(member => member.isLeader);
-  const teamMembers_filtered = teamMembers.filter(member => !member.isLeader);
+  const stats = [
+    { number: '4', label: 'Core Team Members', icon: Users },
+    { number: '50+', label: 'Combined Years Experience', icon: Award },
+    { number: '500+', label: 'Projects Delivered', icon: ExternalLink },
+    { number: '98%', label: 'Client Satisfaction', icon: Award }
+  ];
 
   return (
     <div className="min-h-screen pt-16">
@@ -171,120 +147,21 @@ const Teams: React.FC = () => {
             {t('teams.hero.subtitle')}
           </p>
           
-          <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
-            <div className="flex items-center space-x-3 bg-gradient-to-r from-blue-900/30 to-blue-800/30 px-6 py-3 rounded-full border border-blue-700/30">
-              <Users className="h-5 w-5 text-blue-400" />
-              <span className="text-blue-300 font-semibold">50+ AI Experts</span>
-            </div>
-            <div className="flex items-center space-x-3 bg-gradient-to-r from-purple-900/30 to-purple-800/30 px-6 py-3 rounded-full border border-purple-700/30">
-              <Award className="h-5 w-5 text-purple-400" />
-              <span className="text-purple-300 font-semibold">PhD & Masters Degrees</span>
-            </div>
-            <div className="flex items-center space-x-3 bg-gradient-to-r from-green-900/30 to-green-800/30 px-6 py-3 rounded-full border border-green-700/30">
-              <span className="text-green-400 font-bold text-lg">100+</span>
-              <span className="text-green-300 font-semibold">Research Publications</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
-              Leadership Team
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Visionary leaders driving the future of artificial intelligence
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            {leaders.map((member) => (
-              <motion.div
-                key={member.id}
-                className="group bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl border border-gray-700 hover:border-blue-500 transition-all duration-500 transform hover:-translate-y-2 overflow-hidden"
-                onMouseEnter={() => setHoveredMember(member.id)}
-                onMouseLeave={() => setHoveredMember(null)}
-                whileHover={{ scale: 1.02 }}
-                initial={{ opacity: 0, y: 50 }}
+          {/* Team Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            {stats.map((stat, index) => (
+              <motion.div 
+                key={index} 
+                className="bg-gradient-to-br from-blue-900/30 to-blue-800/30 rounded-2xl border border-blue-700/30 p-6"
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: member.id * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                {/* Profile Image */}
-                <div className="relative h-80 overflow-hidden">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                  
-                  {/* Social Links - Show on Hover */}
-                  <AnimatePresence>
-                    {hoveredMember === member.id && (
-                      <motion.div
-                        className="absolute top-4 right-4 flex space-x-2"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.8 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <a href={member.social.linkedin} className="p-2 bg-blue-600 text-white rounded-full hover:bg-blue-500 transition-colors duration-300">
-                          <Linkedin className="h-4 w-4" />
-                        </a>
-                        <a href={member.social.twitter} className="p-2 bg-sky-600 text-white rounded-full hover:bg-sky-500 transition-colors duration-300">
-                          <Twitter className="h-4 w-4" />
-                        </a>
-                        <a href={member.social.github} className="p-2 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-colors duration-300">
-                          <Github className="h-4 w-4" />
-                        </a>
-                        <a href={`mailto:${member.social.email}`} className="p-2 bg-red-600 text-white rounded-full hover:bg-red-500 transition-colors duration-300">
-                          <Mail className="h-4 w-4" />
-                        </a>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-
-                  <div className="absolute bottom-4 left-4">
-                    <h3 className="text-2xl font-bold text-white mb-1">{member.name}</h3>
-                    <p className="text-blue-400 font-semibold">{member.role}</p>
-                  </div>
+                <div className="flex items-center justify-center w-12 h-12 bg-blue-600 rounded-xl mb-3 mx-auto">
+                  <stat.icon className="h-6 w-6 text-white" />
                 </div>
-
-                <div className="p-6">
-                  {/* Bio */}
-                  <p className="text-gray-300 mb-4 leading-relaxed">{member.bio}</p>
-
-                  {/* Expertise */}
-                  <div className="mb-4">
-                    <h4 className="text-lg font-semibold text-white mb-2">Expertise</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {member.expertise.map((skill, idx) => (
-                        <span
-                          key={idx}
-                          className="px-3 py-1 bg-blue-600 text-white rounded-full text-sm"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Achievements */}
-                  <div>
-                    <h4 className="text-lg font-semibold text-white mb-2">Key Achievements</h4>
-                    <ul className="space-y-1">
-                      {member.achievements.map((achievement, idx) => (
-                        <li key={idx} className="text-gray-300 text-sm flex items-center space-x-2">
-                          <Award className="h-3 w-3 text-yellow-400 flex-shrink-0" />
-                          <span>{achievement}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+                <div className="text-2xl md:text-3xl font-bold text-blue-400 mb-1">{stat.number}</div>
+                <div className="text-sm text-gray-300">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -296,93 +173,202 @@ const Teams: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
-              Our Expert Team
+              Meet Our Expert Team
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Talented professionals driving innovation across all AI domains
+              World-class AI professionals dedicated to transforming your vision into reality
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers_filtered.map((member, index) => (
+          {/* Team Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {teamMembers.map((member, index) => (
               <motion.div
                 key={member.id}
-                className="group bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl border border-gray-700 hover:border-blue-500 transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"
+                className="group relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl border border-gray-700 hover:border-blue-500 transition-all duration-500 transform hover:-translate-y-3 overflow-hidden"
                 onMouseEnter={() => setHoveredMember(member.id)}
                 onMouseLeave={() => setHoveredMember(null)}
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
                 whileHover={{ scale: 1.02 }}
               >
+                {/* Founder Badge */}
+                {member.isFounder && (
+                  <div className="absolute top-4 left-4 z-10 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black px-3 py-1 rounded-full text-xs font-bold">
+                    FOUNDER
+                  </div>
+                )}
+
                 {/* Profile Image */}
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-80 overflow-hidden">
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
                   
                   {/* Social Links - Show on Hover */}
                   <AnimatePresence>
                     {hoveredMember === member.id && (
                       <motion.div
-                        className="absolute top-4 right-4 flex space-x-1"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.8 }}
-                        transition={{ duration: 0.3 }}
+                        className="absolute top-4 right-4 flex flex-col space-y-2"
+                        initial={{ opacity: 0, scale: 0.8, x: 20 }}
+                        animate={{ opacity: 1, scale: 1, x: 0 }}
+                        exit={{ opacity: 0, scale: 0.8, x: 20 }}
+                        transition={{ duration: 0.3, staggerChildren: 0.1 }}
                       >
-                        <a href={member.social.linkedin} className="p-2 bg-blue-600 text-white rounded-full hover:bg-blue-500 transition-colors duration-300">
-                          <Linkedin className="h-3 w-3" />
-                        </a>
-                        <a href={member.social.twitter} className="p-2 bg-sky-600 text-white rounded-full hover:bg-sky-500 transition-colors duration-300">
-                          <Twitter className="h-3 w-3" />
-                        </a>
-                        <a href={member.social.github} className="p-2 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition-colors duration-300">
-                          <Github className="h-3 w-3" />
-                        </a>
+                        <motion.a 
+                          href={member.social.linkedin} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="p-3 bg-blue-600/90 backdrop-blur-sm text-white rounded-full hover:bg-blue-500 transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-blue-500/50"
+                          whileHover={{ rotate: 5 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <Linkedin className="h-4 w-4" />
+                        </motion.a>
+                        <motion.a 
+                          href={member.social.github} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="p-3 bg-gray-700/90 backdrop-blur-sm text-white rounded-full hover:bg-gray-600 transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-gray-500/50"
+                          whileHover={{ rotate: -5 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <Github className="h-4 w-4" />
+                        </motion.a>
+                        <motion.a 
+                          href={`mailto:${member.social.email}`}
+                          className="p-3 bg-red-600/90 backdrop-blur-sm text-white rounded-full hover:bg-red-500 transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-red-500/50"
+                          whileHover={{ rotate: 5 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <Mail className="h-4 w-4" />
+                        </motion.a>
                       </motion.div>
                     )}
                   </AnimatePresence>
 
-                  <div className="absolute bottom-4 left-4">
-                    <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
-                    <p className="text-blue-400 font-medium">{member.role}</p>
+                  {/* Member Info Overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-blue-300 transition-colors duration-300">
+                      {member.name}
+                    </h3>
+                    <p className="text-blue-400 font-semibold text-lg mb-2">{member.role}</p>
+                    <div className="flex items-center space-x-4 text-sm text-gray-300">
+                      <div className="flex items-center space-x-1">
+                        <MapPin className="h-3 w-3" />
+                        <span>{member.location}</span>
+                      </div>
+                      <div className="flex items-center space-x-1">
+                        <Calendar className="h-3 w-3" />
+                        <span>{member.joinDate}</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <div className="p-5">
+                {/* Card Content */}
+                <div className="p-6">
                   {/* Bio */}
-                  <p className="text-gray-300 mb-3 text-sm leading-relaxed">{member.bio}</p>
+                  <p className="text-gray-300 mb-4 leading-relaxed text-sm line-clamp-4">
+                    {member.bio}
+                  </p>
 
-                  {/* Expertise */}
-                  <div className="mb-3">
-                    <h4 className="text-sm font-semibold text-gray-400 mb-2">Expertise</h4>
-                    <div className="flex flex-wrap gap-1">
-                      {member.expertise.slice(0, 3).map((skill, idx) => (
+                  {/* Expertise Tags */}
+                  <div className="mb-4">
+                    <h4 className="text-sm font-semibold text-gray-400 mb-2">Core Expertise</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {member.expertise.map((skill, idx) => (
                         <span
                           key={idx}
-                          className="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs"
+                          className="px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full text-xs font-medium border border-blue-500/30 hover:bg-blue-600/30 transition-colors duration-300"
                         >
                           {skill}
                         </span>
                       ))}
-                      {member.expertise.length > 3 && (
-                        <span className="px-2 py-1 bg-gray-700 text-gray-400 rounded-full text-xs">
-                          +{member.expertise.length - 3} more
-                        </span>
-                      )}
                     </div>
                   </div>
 
-                  {/* Top Achievement */}
-                  <div className="flex items-center space-x-2 text-sm">
-                    <Award className="h-4 w-4 text-yellow-400 flex-shrink-0" />
-                    <span className="text-gray-300">{member.achievements[0]}</span>
+                  {/* Key Achievement */}
+                  <div className="bg-gradient-to-r from-gray-800/50 to-gray-700/50 rounded-xl p-4 border border-gray-600/30">
+                    <div className="flex items-center space-x-2 mb-2">
+                      <Award className="h-4 w-4 text-yellow-400" />
+                      <span className="text-yellow-300 text-sm font-semibold">Key Achievement</span>
+                    </div>
+                    <p className="text-gray-300 text-sm">{member.achievements[0]}</p>
                   </div>
+
+                  {/* Contact Button */}
+                  <motion.a
+                    href={`mailto:${member.social.email}?subject=Hello from Nexariza AI Website&body=Hi ${member.name},%0D%0A%0D%0AI visited the Nexariza AI website and would like to connect.%0D%0A%0D%0AThank you!`}
+                    className="mt-4 w-full flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-xl hover:from-blue-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25"
+                    whileHover={{ y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Mail className="h-4 w-4" />
+                    <span>Get in Touch</span>
+                  </motion.a>
                 </div>
+
+                {/* Hover Glow Effect */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500/0 via-blue-500/5 to-purple-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team Values Section */}
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
+              Our Team Values
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              The principles that unite our team and drive our success
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: '🚀',
+                title: 'Innovation First',
+                description: 'We push the boundaries of AI technology to create breakthrough solutions'
+              },
+              {
+                icon: '🤝',
+                title: 'Collaboration',
+                description: 'Working together to achieve extraordinary results for our clients'
+              },
+              {
+                icon: '🎯',
+                title: 'Excellence',
+                description: 'Delivering world-class quality in every project and interaction'
+              },
+              {
+                icon: '💡',
+                title: 'Continuous Learning',
+                description: 'Staying at the forefront of AI research and technological advancement'
+              }
+            ].map((value, index) => (
+              <motion.div
+                key={index}
+                className="text-center p-8 bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl border border-gray-700 hover:border-blue-500 transition-all duration-300 transform hover:-translate-y-2"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="text-4xl mb-4">{value.icon}</div>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
+                  {value.title}
+                </h3>
+                <p className="text-gray-300 leading-relaxed">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -392,20 +378,150 @@ const Teams: React.FC = () => {
       {/* Join Our Team CTA */}
       <section className="py-20 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Join Our World-Class Team
-          </h2>
-          <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-            We're always looking for talented individuals who share our passion for AI innovation. 
-            Help us shape the future of artificial intelligence.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-white text-blue-900 font-semibold rounded-full hover:bg-gray-100 transform hover:scale-105 transition-all duration-300">
-              View Open Positions
-            </button>
-            <button className="px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-blue-900 transition-all duration-300">
-              Send Your Resume
-            </button>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Ready to Join Our Mission?
+            </h2>
+            <p className="text-xl text-blue-100 mb-8 leading-relaxed">
+              Be part of the team that's transforming businesses with AI innovation. 
+              We're always looking for talented individuals who share our passion for excellence.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.button 
+                className="px-8 py-4 bg-white text-blue-900 font-semibold rounded-full hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-white/25"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => window.location.href = '/jobs'}
+              >
+                View Open Positions
+              </motion.button>
+              <motion.button 
+                className="px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-blue-900 transition-all duration-300"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => window.location.href = 'mailto:careers@nexariza.com?subject=Interest in Joining Nexariza AI Team&body=Hello Nexariza AI Team,%0D%0A%0D%0AI am interested in joining your team and would like to learn more about opportunities.%0D%0A%0D%0AThank you!'}
+              >
+                Send Your Resume
+              </motion.button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Team Culture Section */}
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
+                Our Team Culture
+              </h2>
+              <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
+                <p>
+                  At Nexariza AI, we foster a culture of innovation, collaboration, and continuous learning. 
+                  Our team combines diverse backgrounds and expertise to tackle the most challenging AI problems.
+                </p>
+                <p>
+                  We believe in empowering each team member to contribute their unique perspective while working 
+                  together toward our shared mission of transforming businesses through artificial intelligence.
+                </p>
+                <div className="bg-gradient-to-r from-blue-900/30 to-blue-800/30 p-6 rounded-xl border border-blue-700/30">
+                  <p className="font-semibold text-blue-300 mb-2">
+                    "Our strength lies in our diversity of thought and our shared commitment to excellence."
+                  </p>
+                  <p className="text-blue-200 text-sm">- Ahmad Yasin, CEO & Founder</p>
+                </div>
+              </div>
+            </motion.div>
+            
+            <motion.div 
+              className="relative"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <img
+                src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                alt="Team collaboration"
+                className="rounded-2xl shadow-2xl border border-gray-700"
+              />
+              <div className="absolute -bottom-6 -right-6 bg-gradient-to-br from-blue-600 to-blue-800 p-6 rounded-2xl border border-blue-500 shadow-xl">
+                <div className="text-2xl font-bold text-white">100%</div>
+                <div className="text-blue-200 text-sm">Remote Friendly</div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Work With Us */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
+              Why Work at Nexariza AI?
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Join a team that's passionate about pushing the boundaries of AI innovation
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: '🚀',
+                title: 'Cutting-Edge Projects',
+                description: 'Work on revolutionary AI projects that shape the future of technology and business transformation'
+              },
+              {
+                icon: '🌟',
+                title: 'World-Class Team',
+                description: 'Collaborate with top AI researchers, engineers, and consultants from leading tech companies'
+              },
+              {
+                icon: '📈',
+                title: 'Career Growth',
+                description: 'Accelerate your career with mentorship, learning opportunities, and leadership development'
+              },
+              {
+                icon: '💰',
+                title: 'Competitive Benefits',
+                description: 'Comprehensive compensation package with equity, health benefits, and professional development'
+              },
+              {
+                icon: '🌍',
+                title: 'Remote Flexibility',
+                description: 'Work from anywhere with flexible hours and a strong remote-first culture'
+              },
+              {
+                icon: '🎯',
+                title: 'Impact & Purpose',
+                description: 'Make a real difference by building AI solutions that transform businesses globally'
+              }
+            ].map((benefit, index) => (
+              <motion.div
+                key={index}
+                className="group text-center p-8 bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl border border-gray-700 hover:border-blue-500 transition-all duration-300 transform hover:-translate-y-2"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="text-4xl mb-4">{benefit.icon}</div>
+                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">
+                  {benefit.title}
+                </h3>
+                <p className="text-gray-300 leading-relaxed">{benefit.description}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
